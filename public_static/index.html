@@ -6,10 +6,23 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./jquery.js"></script>
-    <script src="../p5.min.js"></script>
-    <script src="./canvas.js"></script>
+    <script src="./index.js"></script>
 </head>
 <body>
-    jdfajdhd
+    <div id="loginContainer">
+        <h2>Login :</h2>
+        <input type="text" id="loginUsername" placeholder="Username">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <h2>Signup: </h2>
+        <input type="text" id="signUpUsername" placeholder="Username">
+        <input type="password" id="signupPassword" placeholder="Password">
+    </div>
+    <div id="whiteBoardConatnier">
+        <a href="/whiteboard.html"><button id="create">Create a new whiteboard</button></a>
+        <h2>Join an exisiting whiteboard</h2>
+        <input type="text" id="boardID">
+        <a href="/whiteboard.html"><button id="join">Join</button></a>
+    </div>
+    
 </body>
 </html>
