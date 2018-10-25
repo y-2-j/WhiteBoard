@@ -9,20 +9,13 @@
     <script src="./index.js"></script>
 </head>
 <body>
-    <div id="loginContainer">
-        <h2>Login :</h2>
-        <input type="text" id="loginUsername" placeholder="Username">
-        <input type="password" id="loginPassword" placeholder="Password">
-        <h2>Signup: </h2>
-        <input type="text" id="signUpUsername" placeholder="Username">
-        <input type="password" id="signupPassword" placeholder="Password">
-    </div>
     <div id="whiteBoardConatnier">
         <a href="/whiteboard.html"><button id="create">Create a new whiteboard</button></a>
         <h2>Join an exisiting whiteboard</h2>
-        <input type="text" id="boardID">
-        <a href="/whiteboard.html"><button id="join">Join</button></a>
+        <form id="joinBoard">
+            <input type="text" id="boardID" placeholder="Enter room ID">
+            <button id="join" type="submit">Join</button>
+        </div>
     </div>
-    
 </body>
 </html>
