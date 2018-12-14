@@ -28,7 +28,7 @@ socket.on('changeColor',(data)=>{
 });
 socket.on('clearScreen', ()=>{
     fill(255);
-    ellipse(450,260,1400,1000);
+    rect(0,0,2000,2000);
 });
 
 socket.on('newUser', (data)=>{
@@ -44,8 +44,9 @@ socket.on('userLeft', (data)=>{
 });
 
 function setup(){
-    const myCanvas = createCanvas(900,520);
+    const myCanvas = createCanvas(1200,600);
     myCanvas.parent('canvas');
+    myCanvas.position(60,140);
     console.log(myCanvas);
     background(255);
     stroke(0);
@@ -61,58 +62,58 @@ function setup(){
         socket.emit('changeSize', {size: 2, room});
     });
     size2btn = createButton('++');
-    size2btn.position(10, 50);
+    size2btn.position(myCanvas.x+10, myCanvas.y+50);
     size2btn.mousePressed(()=>{
         strokeWeight(4);
         socket.emit('changeSize', {size: 4, room});
     });
     size3btn = createButton('+++');
-    size3btn.position(10, 80);
+    size3btn.position(myCanvas.x+10, myCanvas.y+80);
     size3btn.mousePressed(()=>{
         strokeWeight(10);
         socket.emit('changeSize', {size: 10, room});
     });
     size4btn = createButton('++++');
-    size4btn.position(10, 110);
+    size4btn.position(myCanvas.x+10, myCanvas.y+110);
     size4btn.mousePressed(()=>{
         strokeWeight(15);
         socket.emit('changeSize', {size: 15, room});
     });
     eraser = createButton('Eraser');
-    eraser.position(10, 140);
+    eraser.position(myCanvas.x+10, myCanvas.y+140);
     eraser.mousePressed(()=>{
         stroke(255);
         socket.emit('changeColor', {r: 255, g:255, b:255, room});
     });
     black = createButton('Black Ink');
-    black.position(10, 170);
+    black.position(myCanvas.x+10, myCanvas.y+170);
     black.mousePressed(()=>{
         stroke(0);
         socket.emit('changeColor', {r: 0, g:0, b:0, room});
     });  
     red = createButton('Red Ink');
-    red.position(10, 200);
+    red.position(myCanvas.x+10, myCanvas.y+200);
     red.mousePressed(()=>{
         stroke(255,0,0);
         socket.emit('changeColor', {r: 255, g:0, b:0, room});
     });
     green = createButton('Green Ink');
-    green.position(10, 230);
+    green.position(myCanvas.x+10, myCanvas.y+230);
     green.mousePressed(()=>{
         stroke(0,255,0);
         socket.emit('changeColor', {r: 0, g:255, b:0, room});
     });
     blue = createButton('Blue Ink');
-    blue.position(10, 260);
+    blue.position(myCanvas.x+10, myCanvas.y+260);
     blue.mousePressed(()=>{
         stroke(0,0,255);
         socket.emit('changeColor', {r:0 , g:0 , b:255, room});
     });
     clearScreen = createButton('Erase all');
-    clearScreen.position(880, 10);
+    clearScreen.position(myCanvas.x+1080, myCanvas.y+10);
     clearScreen.mousePressed(()=>{
         fill(255);
-        ellipse(450,260,1400,1000);
+        rect(0,0,2000,2000);
         socket.emit('clearScreen', {room});
     });
 };
