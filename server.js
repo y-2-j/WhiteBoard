@@ -3,6 +3,8 @@ const path = require('path');
 const http=require('http');
 const socketio=require('socket.io');
 
+const CONFIG = require("./config");
+
 // To generate Random room numbers
 const randomIdGen = require('random-id-generator');
 
@@ -55,6 +57,6 @@ io.on('connection', (socket)=>{
     })
 });
 
-server.listen(2700, ()=>{
-    console.log("Server successfully started at http://localhost:2700");    
+server.listen(CONFIG.SERVER.PORT, () => {
+    console.log(`Server started at http://${CONFIG.SERVER.HOST}:${CONFIG.SERVER.PORT}`);
 });
