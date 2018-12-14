@@ -28,7 +28,7 @@ socket.on('changeColor',(data)=>{
 });
 socket.on('clearScreen', ()=>{
     fill(255);
-    rect(0,0,2000,2000);
+    rect(-20,-20,20000,20000);
 });
 
 socket.on('newUser', (data)=>{
@@ -113,7 +113,7 @@ function setup(){
     clearScreen.position(myCanvas.x+1080, myCanvas.y+10);
     clearScreen.mousePressed(()=>{
         fill(255);
-        rect(0,0,2000,2000);
+        rect(-20,-20,20000,20000);
         socket.emit('clearScreen', {room});
     });
 };
